@@ -1,7 +1,7 @@
 import "./Square.css"
 
-function Square() {
-	return <button className="square"></button>
+function Square(props) {
+	return <button className="square" onClick={props.clickHandler}>{props.value}</button>
 }
 
 export default Square;

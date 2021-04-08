@@ -1,8 +1,4 @@
-.boardRow:after {
-    display: table;
-    content: "";
-    clear: both;
-}
-.boardRow {
-    height: 50px;
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
 }
