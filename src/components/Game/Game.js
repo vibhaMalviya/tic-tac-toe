@@ -8,11 +8,12 @@ function Game() {
 	const [history, setHistory] = useState([Array(9).fill(null)]);
 	const [isXNext, setNext] = useState(true);
 	const [step, setStep] = useState(0);
+	const winner = calculateWinner(history[step]);
 	
 	const onSquareClick = (i) => {
 		const squares = history.slice(0, step + 1);
 		const current = [...squares[step]];
-		if(calculateWinner(current) || current[i]) {
+		if(winner || current[i]) {
 			return;
 		}
 		current[i] = isXNext ? 'X' : 'O';
@@ -27,7 +28,7 @@ function Game() {
 	};
 	
 	return <div className="game">
-		<h1>{'Winner is ' + calculateWinner(history[step])}</h1>
+		<h1>{winner ? `Winner is ${winner}` : `Next player: ${isXNext ? 'X':'O'}`}</h1>
 		<Board squares={history[step]} onSquareClick={onSquareClick}/>
 		<ul>
 			{history.map((squares, step) => {
