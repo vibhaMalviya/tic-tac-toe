@@ -29,7 +29,7 @@ function Game() {
 	};
 	
 	return <div className="game">
-		<h1>{winner ? `Winner is ${winner}` : `Next player: ${isXNext ? 'X':'O'}`}</h1>
+		<h1>{winner ? (winner === 'DRAW' ? `It is a DRAW` :`Winner is ${winner}`) : `Next player: ${isXNext ? 'X':'O'}`}</h1>
 		<Board squares={history[step]} onSquareClick={onSquareClick} line={line}/>
 		<ul>
 			{history.map((squares, step) => {
