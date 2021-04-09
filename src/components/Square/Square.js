@@ -1,7 +1,8 @@
 import "./Square.css"
 
 function Square(props) {
-	return <button className="square" onClick={props.clickHandler}>{props.value}</button>
+	const highlightClass = props.highlight ? 'highlight' : '';
+	return <button className={`square ${highlightClass}`} onClick={props.clickHandler}>{props.value}</button>
 }
 
 export default Square;
