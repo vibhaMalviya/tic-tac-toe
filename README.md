@@ -1,4 +1,4 @@
-# This site is published at https://vibhamalviya.github.io/tic-tac-toe/
+## This site is published at https://vibhamalviya.github.io/tic-tac-toe/
 
 # Getting Started with Create React App
 
